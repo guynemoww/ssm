@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 寮傛杩斿洖鍚勭鏍煎紡
+ * 瀵倹顒炴潻鏂挎礀閸氬嫮顫掗弽鐓庣础
  * json
  * xml
  * text
@@ -14,25 +14,24 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ResponseUtils {
 
-	//鍙戦�佸唴瀹�  
+	//閸欐垿锟戒礁鍞寸�癸拷  
 	public static void render(HttpServletResponse response,String contentType,String text){
 		response.setContentType(contentType);
 		try {
 			response.getWriter().write(text);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	//鍙戦�佺殑鏄疛SON
+	//閸欐垿锟戒胶娈戦弰鐤汼ON
 	public static void renderJson(HttpServletResponse response,String text){
 		render(response, "application/json;charset=UTF-8", text);
 	}
-	//鍙戦�亁ml
+	//閸欐垿锟戒簛ml
 	public static void renderXml(HttpServletResponse response,String text){
 		render(response, "text/xml;charset=UTF-8", text);
 	}
-	//鍙戦�乼ext
+	//閸欐垿锟戒辜ext
 	public static void renderText(HttpServletResponse response,String text){
 		render(response, "text/plain;charset=UTF-8", text);
 	}

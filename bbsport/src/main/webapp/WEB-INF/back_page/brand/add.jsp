@@ -16,12 +16,12 @@ function uploadPic(){
 			//回调 二个路径  
 			//url
 			//path
-			//$("#allImgUrl").attr("src",data.url);
-			//$("#path").val(data.path);
+			$("#allImgUrl").attr("src",data.url);
+			$("#path").val(data.path);
 		}
 	};
 	
-	//jquery.form使用方式 寻找ID就用#
+	//jquery.form使用方式
 	$("#jvForm").ajaxSubmit(options);
 	
 }
