@@ -63,6 +63,22 @@ public class BrandController {
 		
 		return "brand/add";
 	}
+	
+	//增加一个品牌
+	@RequestMapping(value = "/brand/add.do")	
+//	public String add(String name,String imgUrl,String description,Integer sort,Integer isDisplay){
+//		Brand brand = new Brand(); 
+//		brand.setName(name);
+//		brand.setImgUrl(imgUrl);
+//		brand.setDescription(description);
+//		brand.setSort(sort);
+//		brand.setIsDisplay(isDisplay);
+	public String add(Brand brand){
+		
+		brandService.addBrand(brand);
+		//返回的是一个来自页面的http请求
+		return "redirect:/brand/list.do";
+	}
 }
 
 

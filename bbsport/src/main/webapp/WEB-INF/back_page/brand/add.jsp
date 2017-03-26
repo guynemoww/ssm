@@ -9,20 +9,20 @@
 function uploadPic(){
 	//定义参数
 	var options = {
-		url : "/upload/uploadPic.do",
-		dataType : "json",
-		type :  "post",
-		success : function(data){
-			//回调 二个路径  
-			//url
-			//path
-			$("#allImgUrl").attr("src",data.url);
-			$("#path").val(data.path);
-		}
-	};
-	
-	//jquery.form使用方式
-	$("#jvForm").ajaxSubmit(options);
+			url : "/upload/uploadPic.do",
+			dataType : "json",
+			type :  "post",
+			success : function(data){
+				//回调 二个路径  
+				//url
+				//path
+				$("#allImgUrl").attr("src",data.url);
+				$("#path").val(data.path);
+			}
+		};
+		
+		//jquery.form使用方式
+		$("#jvForm").ajaxSubmit(options);
 	
 }
 
@@ -37,7 +37,7 @@ function uploadPic(){
 	<div class="clear"></div>
 </div>
 <div class="body-box" style="float:right">
-	<form id="jvForm" action="add.do" method="post" enctype="multipart/form-data">
+	<form id="jvForm" action="/brand/add.do" method="post" enctype="multipart/form-data">
 		<table cellspacing="1" cellpadding="2" width="100%" border="0" class="pn-ftable">
 			<tbody>
 				<tr>
