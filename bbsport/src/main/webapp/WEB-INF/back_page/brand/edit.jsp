@@ -20,7 +20,6 @@ function uploadPic(){
 				$("#path").val(data.path);
 			}
 		};
-		
 		//jquery.form使用方式
 		$("#jvForm").ajaxSubmit(options);
 	
