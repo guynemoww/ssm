@@ -3,7 +3,7 @@ package cn.git.core.bean.product;
 import cn.git.core.web.Constants;
 
 /**
- * 鍝佺墝
+ * 閸濅胶澧�
  * @author lx
  *
  */
@@ -16,16 +16,16 @@ public class Brand {
 	private Integer sort;
 	private Integer isDisplay;
 	
-	//鑾峰彇鍏ㄨ矾寰�
+	//閼惧嘲褰囬崗銊ㄧ熅瀵帮拷
 	public String getAllUrl(){
 		return Constants.IMAGE_URL + imgUrl;
 	}
 	
-	//椤靛彿
+	//妞ら潧褰�
 	private Integer pageNo = 1;
-	//寮�濮嬭
+	//瀵拷婵顢�
 	private Integer startRow;
-	//姣忛〉鏁�
+	//濮ｅ繘銆夐弫锟�
 	private Integer pageSize = 10;
 	
 	
@@ -39,7 +39,7 @@ public class Brand {
 		return pageSize;
 	}
 	public void setPageSize(Integer pageSize) {
-		//璁＄畻涓�娆″紑濮嬭
+		//鐠侊紕鐣绘稉锟藉▎鈥崇磻婵顢�
 		this.startRow = (pageNo - 1)*pageSize;
 		this.pageSize = pageSize;
 	}
@@ -47,7 +47,7 @@ public class Brand {
 		return pageNo;
 	}
 	public void setPageNo(Integer pageNo) {
-		//璁＄畻涓�娆″紑濮嬭
+		//鐠侊紕鐣绘稉锟藉▎鈥崇磻婵顢�
 		this.startRow = (pageNo - 1)*pageSize;
 		this.pageNo = pageNo;
 	}
@@ -93,6 +93,7 @@ public class Brand {
 				+ description + ", imgUrl=" + imgUrl + ", sort=" + sort
 				+ ", isDisplay=" + isDisplay + "]";
 	}
+	
 	
 	
 }

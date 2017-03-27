@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java/cn/git/common/page/ResponseUtils.java=UTF-8
+encoding//src/main/java/cn/git/core/bean/product/Brand.java=UTF-8
+encoding//src/main/java/cn/git/core/service/product/BrandServiceImpl.java=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8

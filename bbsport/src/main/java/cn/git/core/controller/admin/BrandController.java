@@ -2,12 +2,13 @@ package cn.git.core.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.git.core.bean.product.Brand;
 import cn.git.core.service.product.BrandService;
+import cn.git.core.web.Constants;
 import cn.itcast.common.page.Pagination;
 
 
@@ -79,7 +80,54 @@ public class BrandController {
 		//返回的是一个来自页面的http请求
 		return "redirect:/brand/list.do";
 	}
+	
+	@RequestMapping(value = "/brand/delete.do")
+	public String delete(Integer id,String name,Integer isDisplay,ModelMap model){
+		
+		brandService.deleteBrandById(id);
+		if(name != null){
+			model.addAttribute("name", name);
+		}
+		if(null != isDisplay){
+			model.addAttribute("isDisplay", isDisplay);
+		}
+		return "redirect:/brand/list.do";
+	}
+	
+	@RequestMapping(value = "/brand/toEdit.do")
+	public String updateBrand(Integer id,Model model){
+		Brand brand = brandService.getBrandById(id);
+		brand.setImgUrl(Constants.IMAGE_URL+brand.getImgUrl());
+		model.addAttribute("brand", brand);
+		return "brand/edit";
+	}
+	
+	@RequestMapping(value = "/brand/update.do")
+	public String updateBrand(Brand brand){
+		brandService.updateBrand(brand);
+		
+		return "redirect:/brand/list.do";
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

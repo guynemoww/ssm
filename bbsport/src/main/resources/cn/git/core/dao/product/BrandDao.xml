@@ -62,4 +62,37 @@
 			#{isDisplay}
 		</trim>
 	</insert>
+	<delete id="deleteBrandById" parameterType="java.lang.Integer">
+		delete from bbs_brand where id = #{id}
+	</delete>
+	
+	<!-- 修改 -->
+	<update id="updateBrand" parameterType="brand">
+		update bbs_brand set
+			name = #{name},
+			description=#{description},
+			img_url=#{imgUrl},
+			sort=#{sort},
+		where id=#{id}
+	</update>
+	<!-- 查询品牌 -->
+	<select id="getBrandById" parameterType="java.lang.Integer" resultMap="brand">
+		select * from bbs_brand where id = #{id}
+	</select>
+	
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
